@@ -10,40 +10,59 @@ tools:context=".WeatherActivity">
     <EditText
         android:id="@+id/CityName_Input"
         android:layout_width="300dp"
-        android:layout_height="45dp"
+        android:layout_height="65dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="8dp"
-        android:ems="10"
+        android:backgroundTint="@android:color/white"
+        android:textSize="40dp"
+        android:ems="8"
         android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/citytext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/citytext" />
+        app:layout_constraintTop_toBottomOf="@+id/LOGO"
+        tools:text="CITY" />
 
     <TextView
         android:id="@+id/citytext"
-        android:layout_width="150dp"
+        android:layout_width="300dp"
         android:layout_height="20dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="305dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="Name of the city"
-        app:layout_constraintBottom_toTopOf="@+id/CityName_Input"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/BTN1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/BTN1"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="300dp"
         android:layout_height="50dp"
+        android:layout_marginTop="40dp"
         android:text="CHECK WEATHER"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CityName_Input" />
+        app:layout_constraintTop_toBottomOf="@+id/citytext" />
 
-<!--    <ListView-->
+    <ImageView
+        android:id="@+id/LOGO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="106dp"
+        app:layout_constraintBottom_toTopOf="@+id/CityName_Input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <!--    <ListView-->
 <!--        android:id="@+id/listview_cities"-->
 <!--        android:layout_width="300dp"-->
 <!--        android:layout_height="550dp"-->
