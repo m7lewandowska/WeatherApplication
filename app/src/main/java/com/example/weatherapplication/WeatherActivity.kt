@@ -1,16 +1,22 @@
 package com.example.weatherapplication
 
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.AsyncTask
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.squareup.picasso.Picasso
 import org.json.JSONObject
 import java.net.URL
 import java.text.SimpleDateFormat
 import java.util.*
+
+
 
 class WeatherActivity : AppCompatActivity() {
 
@@ -71,6 +77,7 @@ class WeatherActivity : AppCompatActivity() {
                 val sunset:Long = sys.getLong("sunset")
                 val windSpeed = wind.getString("speed")
                 val weatherDescription = weather.getString("description")
+                val weatherIcon = weather.getString("icon")
 
                 val address = jsonObj.getString("name")+", "+sys.getString("country")
 
@@ -78,6 +85,17 @@ class WeatherActivity : AppCompatActivity() {
                 findViewById<TextView>(R.id.address).text = address
                 findViewById<TextView>(R.id.updated_at).text =  updatedAtText
                 findViewById<TextView>(R.id.status).text = weatherDescription.capitalize()
+
+                //LOADING IMAGE FROM URL
+                var imageName = "https://openweathermap.org/img/wn/$weatherIcon@2x.png"
+                val imageView = findViewById<ImageView>(R.id.weatherIcon)
+                Picasso.get().load(imageName).into(imageView);
+
+//                findViewById<ImageView>(R.id.weatherIcon).setImageURI(Uri.parse(imageName))
+//                val url = URL(imageName)
+//                val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
+//                findViewById<ImageView>(R.id.weatherIcon).setImageBitmap(bmp)
+
                 findViewById<TextView>(R.id.temp).text = temp
                 findViewById<TextView>(R.id.temp_min).text = tempMin
                 findViewById<TextView>(R.id.temp_max).text = tempMax
