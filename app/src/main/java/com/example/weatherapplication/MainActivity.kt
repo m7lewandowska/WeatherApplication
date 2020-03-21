@@ -18,8 +18,6 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,18 +26,13 @@ class MainActivity : AppCompatActivity() {
             val cityName = CityName_Input.text
             changeActivity(this, cityName.toString())
         }
-
     }
 
     companion object {
         fun changeActivity(context: Context, cityName: String) {
-
             val intent = Intent(context, WeatherActivity::class.java)
             intent.putExtra("cityName", cityName)
             context.startActivity(intent)
-
         }
     }
-
-
 }
