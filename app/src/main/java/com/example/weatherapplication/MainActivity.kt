@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         BTN1.setOnClickListener {
-            val cityName = CityName_Input.text
+            val cityName = CityName_Input2.text
             changeActivity(this, cityName.toString())
         }
     }
