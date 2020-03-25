@@ -78,7 +78,7 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:text="CHECK WEATHER"
         android:textSize="17dp"
         android:background="@drawable/btn_background"
